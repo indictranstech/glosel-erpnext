@@ -2,6 +2,7 @@
 // License: GNU General Public License v3. See license.txt
 
 // attach required files
+{% include 'glosel/custom_js_methods.js' %}
 {% include 'erpnext/buying/doctype/purchase_common/purchase_common.js' %};
 
 erpnext.buying.SupplierQuotationController = erpnext.buying.BuyingController.extend({

@@ -2,6 +2,7 @@
 // License: GNU General Public License v3. See license.txt
 
 {% include 'erpnext/buying/doctype/purchase_common/purchase_common.js' %};
+{% include 'glosel/custom_js_methods.js' %}
 
 frappe.provide("erpnext.stock");
 
