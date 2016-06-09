@@ -30,7 +30,8 @@ class BOM(Document):
 		else:
 			idx = 1
 
-		self.name = 'BOM-' + self.item + ('-%.3i' % idx)
+
+		self.name = 'BOM/' + self.item + ('/%.3i' % idx)
 
 	def validate(self):
 		self.clear_operations()
