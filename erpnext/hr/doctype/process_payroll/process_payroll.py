@@ -61,16 +61,22 @@ class ProcessPayroll(Document):
 
 		emp_list = self.get_emp_list()
 		ss_list = []
+		
 		for emp in emp_list:
 			if not frappe.db.sql("""select name from `tabSalary Slip`
 					where docstatus!= 2 and employee = %s and month = %s and fiscal_year = %s and company = %s
 					""", (emp[0], self.month, self.fiscal_year, self.company)):
+				employee=frappe.get_doc("Employee",emp[0])
 				ss = frappe.get_doc({
 					"doctype": "Salary Slip",
 					"fiscal_year": self.fiscal_year,
 					"employee": emp[0],
 					"month": self.month,
 					"company": self.company,
+					"pan":employee.pan,
+					"esi_ip_number":employee.esi_ip_number,
+					"epfo_pf_account_number":employee.epfo_pf_account_number
+
 				})
 				ss.insert()
 				ss_list.append(ss.name)
