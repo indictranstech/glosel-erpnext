@@ -29,6 +29,8 @@ class LeaveApplication(Document):
 			self.previous_doc = None
 
 		set_employee_name(self)
+		print "hhhhh",frappe.session.user
+		print "000000000000", frappe.get_roles(frappe.session.user)
 
 		self.validate_dates()
 		self.validate_balance_leaves()
@@ -180,8 +182,15 @@ class LeaveApplication(Document):
 			frappe.throw(_("Leave of type {0} cannot be longer than {1}").format(self.leave_type, max_days))
 
 	def validate_leave_approver(self):
+
+		
+
 		employee = frappe.get_doc("Employee", self.employee)
 		leave_approvers = [l.leave_approver for l in employee.get("leave_approvers")]
+		roles=frappe.get_roles(frappe.session.user)
+		print roles,"******************************"
+		# if frappe.session.user != self.leave_approver and "HR Manager" not in roles:
+		# 	frappe.throw(_("You can not approve the Leave of the Employee")) 
 
 		if len(leave_approvers) and self.leave_approver not in leave_approvers:
 			frappe.throw(_("Leave approver must be one of {0}")
@@ -192,7 +201,7 @@ class LeaveApplication(Document):
 			frappe.throw(_("{0} ({1}) must have role 'Leave Approver'")\
 				.format(get_fullname(self.leave_approver), self.leave_approver), InvalidLeaveApproverError)
 
-		elif self.docstatus==1 and len(leave_approvers) and self.leave_approver != frappe.session.user:
+		elif self.docstatus==1 and len(leave_approvers) and self.leave_approver != frappe.session.user and "HR Manager" not in roles: 
 			frappe.throw(_("Only the selected Leave Approver can submit this Leave Application"),
 				LeaveApproverIdentityError)
 

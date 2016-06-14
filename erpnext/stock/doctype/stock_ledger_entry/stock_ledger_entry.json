@@ -625,8 +625,8 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2016-06-13 16:51:01.883533", 
- "modified_by": "Administrator", 
+ "modified": "2016-06-14 11:39:13.685830", 
+ "modified_by": "ravindra.l@indictranstech.com", 
  "module": "Stock", 
  "name": "Stock Ledger Entry", 
  "owner": "Administrator", 
@@ -649,6 +649,7 @@
    "set_user_permissions": 0, 
    "share": 1, 
    "submit": 0, 
+   "user_permission_doctypes": "[\"Company\"]", 
    "write": 0
   }, 
   {
