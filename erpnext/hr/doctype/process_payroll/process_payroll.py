@@ -75,7 +75,9 @@ class ProcessPayroll(Document):
 					"company": self.company,
 					"pan":employee.pan,
 					"esi_ip_number":employee.esi_ip_number,
-					"epfo_pf_account_number":employee.epfo_pf_account_number
+					"epfo_pf_account_number":employee.epfo_pf_account_number,
+					"salary_mode":employee.salary_mode,
+					"bank_account_no":employee.bank_ac_no
 
 				})
 				ss.insert()

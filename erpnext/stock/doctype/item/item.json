@@ -2228,7 +2228,7 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 1, 
- "modified": "2016-06-10 18:42:04.629656", 
+ "modified": "2016-07-26 15:52:00.797274", 
  "modified_by": "Administrator", 
  "module": "Stock", 
  "name": "Item", 
@@ -2272,7 +2272,7 @@
    "set_user_permissions": 0, 
    "share": 0, 
    "submit": 0, 
-   "write": 0
+   "write": 1
   }, 
   {
    "amend": 0, 

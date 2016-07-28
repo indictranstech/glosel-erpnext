@@ -1,6 +1,6 @@
 // Copyright (c) 2015, Frappe Technologies Pvt. Ltd. and Contributors
 // License: GNU General Public License v3. See license.txt
-
+{% include 'glosel/custom_js_methods.js' %}
 frappe.provide("erpnext.item");
 
 frappe.ui.form.on("Item", {
