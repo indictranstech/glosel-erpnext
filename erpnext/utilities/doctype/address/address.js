@@ -2,6 +2,7 @@
 // License: GNU General Public License v3. See license.txt
 
 {% include 'erpnext/controllers/js/contact_address_common.js' %};
+{% include 'glosel/custom_js_methods.js' %};
 
 frappe.ui.form.on("Address", "validate", function(frm) {
 	// clear linked customer / supplier / sales partner on saving...
